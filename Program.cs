@@ -6,11 +6,11 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Swagger UI
+// Swagger UI - для проверки API
 app.UseSwagger();
 app.UseSwaggerUI();
 
-// DTO
+// DTO - контейнер
 app.MapPost("/distance", (DistanceRequest req) =>
 {
     var dx = req.X2 - req.X1;
@@ -19,9 +19,7 @@ app.MapPost("/distance", (DistanceRequest req) =>
     var distance = Math.Sqrt(dx * dx + dy * dy);
 
     return Results.Ok(new DistanceResponse(distance));
-})
-.WithName("GetEuclideanDistance")
-.WithOpenApi();
+});
 
 app.Run();
 
