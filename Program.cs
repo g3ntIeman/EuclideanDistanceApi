@@ -6,11 +6,11 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Swagger UI - для проверки API
+// Swagger UI - РґР»СЏ РїСЂРѕРІРµСЂРєРё API
 app.UseSwagger();
 app.UseSwaggerUI();
 
-// DTO - контейнер
+// DTO - РєРѕРЅС‚РµР№РЅРµСЂ
 app.MapPost("/distance", (DistanceRequest req) =>
 {
     var dx = req.X2 - req.X1;
