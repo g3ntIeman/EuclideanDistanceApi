@@ -1,0 +1,6 @@
+@EuclideanDistanceApi_HostAddress = http://localhost:5026
+
+GET {{EuclideanDistanceApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
